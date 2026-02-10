@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ae33852cae6ab69409b57cffd1c85bfd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 280938
+  packageName: Init(args) Lite
+  packageVersion: 1.3.3
+  assetPath: Packages/com.sisus.init-args-lite/Scripts/Core/Initializable/AddComponentExtensions.cs
+  uploadId: 654039

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d1b8203724db3be42a938b80e1dfbd00
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 280938
+  packageName: Init(args) Lite
+  packageVersion: 1.3.3
+  assetPath: Packages/com.sisus.init-args-lite/Scripts/Core/InitArgsException.cs
+  uploadId: 654039
