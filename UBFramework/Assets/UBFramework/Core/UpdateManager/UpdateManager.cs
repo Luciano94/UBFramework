@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,12 @@ namespace UBFramework.Core.UpdateManager
         private List<IUpdateObserver> _observers;
         private List<IUpdateObserver> _pendingObservers;
         private int _currentUpdateIndex;
+
+        private void Awake()
+        {
+            _observers = new List<IUpdateObserver>();
+            _pendingObservers = new List<IUpdateObserver>();
+        }
 
         private void Update()
         {

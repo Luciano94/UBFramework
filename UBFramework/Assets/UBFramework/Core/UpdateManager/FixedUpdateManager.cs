@@ -9,6 +9,12 @@ namespace UBFramework.Core.UpdateManager
         private List<IFixedUpdateObserver> _pendingObservers;
         private int _currentUpdateIndex;
 
+        private void Awake()
+        {
+            _observers = new List<IFixedUpdateObserver>();
+            _pendingObservers = new List<IFixedUpdateObserver>();
+        }
+        
         private void Update()
         {
             for (_currentUpdateIndex = _observers.Count - 1; _currentUpdateIndex >= 0; _currentUpdateIndex--)
