@@ -1,29 +1,21 @@
 using UnityEngine;
 using UnityEngine.Rendering;
-using UBFramework.Core.UpdateManager;
-using UBFramework.Core.UpdateManager.Test;
+using UBFramework.Core.UpdateSystem;
 using Zenject;
 
 
 namespace UBFramework.Core.Bootstrap
 {
-    public class GameInitiator : MonoInstaller
+    public class GameInitiator : MonoInstaller<GameInitiator>
     {
         [SerializeField] private Camera _cameraPrefab;
         [SerializeField] private Light _lightPrefab;
         [SerializeField] private Volume _volumePrefab;
-        [SerializeField] private ObserverTest _updateObserverPrefab;
-        [SerializeField] private UpdateManager.UpdateManager _updateManagerPrefab;
-        [SerializeField] private LateUpdateManager _lateUpdateManagerPrefab;
-        [SerializeField] private FixedUpdateManager _fixedUpdateManagerPrefab;
+
         
         private Camera _camera;
         private Light _light;
         private Volume _volume;
-        private ObserverTest _updateObserver;
-        private LateUpdateManager _lateUpdateManager;
-        private FixedUpdateManager _fixedUpdateManager;
-        private UpdateManager.UpdateManager _updateManager;
         
         /// <summary>
         /// This should be the only Start method in the game, and here is where all objects and systems are initialized.
@@ -43,9 +35,9 @@ namespace UBFramework.Core.Bootstrap
         /// </summary>
         public override void InstallBindings()
         {
-            Container.Bind<IUpdateManager>().To<UpdateManager.UpdateManager>().AsSingle();
-            Container.Bind<IFixedUpdateManager>().To<FixedUpdateManager>().AsSingle();
-            Container.Bind<ILateUpdateManager>().To<LateUpdateManager>().AsSingle();
+            Container.Bind<IUpdateManager>().To<UpdateManager>().FromNewComponentOnNewGameObject().AsSingle();
+            Container.Bind<IFixedUpdateManager>().To<FixedUpdateManager>().FromNewComponentOnNewGameObject().AsSingle();
+            Container.Bind<ILateUpdateManager>().To<LateUpdateManager>().FromNewComponentOnNewGameObject().AsSingle();
         }
         
         /// <summary>
@@ -53,13 +45,10 @@ namespace UBFramework.Core.Bootstrap
         /// </summary>
         private void BindObjects()
         {
+            Debug.Log("BindObjects");
             _camera = Instantiate(_cameraPrefab);
             _light = Instantiate(_lightPrefab);
             _volume = Instantiate(_volumePrefab);
-            _updateManager = Instantiate(_updateManagerPrefab);
-            _lateUpdateManager = _updateManager.GetComponent<LateUpdateManager>();
-            _fixedUpdateManager = _updateManager.GetComponent<FixedUpdateManager>();
-            _updateObserver = Instantiate(_updateObserverPrefab);
         }
         
         /// <summary>

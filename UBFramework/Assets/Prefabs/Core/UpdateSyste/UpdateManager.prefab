@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6995715822766977836}
   - component: {fileID: 4873736096384109332}
-  - component: {fileID: 2166347267241536033}
-  - component: {fileID: 5228132945578183896}
   m_Layer: 0
   m_Name: UpdateManager
   m_TagString: Untagged
@@ -46,27 +44,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09095ca102cc36f4b9f98dd601f1dda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UBFramework.Core.UpdateManager.UpdateManager
---- !u!114 &2166347267241536033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952361506096291631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2882468d5d7553345b39533baac7ea9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UBFramework.Core.UpdateManager.LateUpdateManager
---- !u!114 &5228132945578183896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952361506096291631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52c51b34db14bf4381abf6ad4589ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UBFramework.Core.UpdateManager.FixedUpdateManager

@@ -1,4 +1,4 @@
-namespace UBFramework.Core.UpdateManager
+namespace UBFramework.Core.UpdateSystem
 {
     public interface IFixedUpdateManager
     {

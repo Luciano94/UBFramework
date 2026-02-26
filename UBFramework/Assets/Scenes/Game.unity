@@ -119,54 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1104871141 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8956341493728779304, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
-  m_PrefabInstance: {fileID: 1834113110}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1104871142 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
-  m_PrefabInstance: {fileID: 1834113110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104871141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0198bd4b59a758b4e8b20bd5a962c802, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameInitiator
---- !u!114 &1104871144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104871141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Zenject::Zenject.SceneContext
-  _scriptableObjectInstallers: []
-  _monoInstallers:
-  - {fileID: 1104871142}
-  _installerPrefabs: []
-  _autoRun: 1
-  OnPreInstall:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPostInstall:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPreResolve:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPostResolve:
-    m_PersistentCalls:
-      m_Calls: []
-  _parentNewObjectsUnderSceneContext: 0
-  _contractNames: []
-  _parentContractNames: []
 --- !u!1001 &1834113110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,17 +168,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
-      propertyPath: _updateManagerPrefab
+      propertyPath: _updateObserver
       value: 
-      objectReference: {fileID: 4873736096384109332, guid: 87de4379cff3b384c8f30f781598103b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
-      propertyPath: _lateUpdateManagerPrefab
+      propertyPath: _updateObserverPrefab
       value: 
-      objectReference: {fileID: 2166347267241536033, guid: 87de4379cff3b384c8f30f781598103b, type: 3}
+      objectReference: {fileID: 8712672888061552956, guid: fe4dbb0c4889b31489a65310749244d8, type: 3}
     - target: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
-      propertyPath: _fixedUpdateManagerPrefab
+      propertyPath: _managerSystemContainer
       value: 
-      objectReference: {fileID: 5228132945578183896, guid: 87de4379cff3b384c8f30f781598103b, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
+      propertyPath: _updateManagerContainer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
+      propertyPath: _lateUpdateManagerContainer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
+      propertyPath: _fixedUpdateManagerContainer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8956341493728779304, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
       propertyPath: m_Name
       value: GameInitiator
@@ -234,10 +198,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8956341493728779304, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1104871144}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

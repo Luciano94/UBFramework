@@ -1,20 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UBFramework.Core.UpdateManager
+namespace UBFramework.Core.UpdateSystem
 {
-    public class LateUpdateManager : MonoBehaviour, ILateUpdateManager
+    public class UpdateManager : MonoBehaviour, IUpdateManager
     {
-        private List<ILateUpdateObserver> _observers;
-        private List<ILateUpdateObserver> _pendingObservers;
+        private List<IUpdateObserver> _observers;
+        private List<IUpdateObserver> _pendingObservers;
         private int _currentUpdateIndex;
 
         private void Awake()
         {
-            _observers = new List<ILateUpdateObserver>();
-            _pendingObservers = new List<ILateUpdateObserver>();
+            _observers = new List<IUpdateObserver>();
+            _pendingObservers = new List<IUpdateObserver>();
         }
-        
+
         private void Update()
         {
             for (_currentUpdateIndex = _observers.Count - 1; _currentUpdateIndex >= 0; _currentUpdateIndex--)
@@ -26,12 +26,12 @@ namespace UBFramework.Core.UpdateManager
             _pendingObservers.Clear();
         }
 
-        public void RegisterObserver(ILateUpdateObserver updateObserver)
+        public void RegisterObserver(IUpdateObserver updateObserver)
         {
             _pendingObservers.Add(updateObserver);
         }
 
-        public void UnregisterObserver(ILateUpdateObserver updateObserver)
+        public void UnregisterObserver(IUpdateObserver updateObserver)
         {
             _observers.Remove(updateObserver);
             _currentUpdateIndex--;

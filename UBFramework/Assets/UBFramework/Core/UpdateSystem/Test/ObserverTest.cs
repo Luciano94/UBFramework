@@ -1,13 +1,13 @@
 using UnityEngine;
 using Zenject;
 
-namespace UBFramework.Core.UpdateManager.Test
+namespace UBFramework.Core.UpdateSystem.Test
 {
     public class ObserverTest : MonoBehaviour, IUpdateObserver, IFixedUpdateObserver, ILateUpdateObserver
     {
-        public IUpdateManager _updateManager;
-        public IFixedUpdateManager _fixedUpdateManager;
-        public ILateUpdateManager _lateUpdateManager;
+        private IUpdateManager _updateManager;
+        private IFixedUpdateManager _fixedUpdateManager;
+        private ILateUpdateManager _lateUpdateManager;
 
         [Inject]
         public void Construct(IUpdateManager updateManager, IFixedUpdateManager fixedUpdateManager,
