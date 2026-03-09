@@ -13,7 +13,6 @@ namespace UBFramework.Core.UpdateSystem.Test
         public void Construct(IUpdateManager updateManager, IFixedUpdateManager fixedUpdateManager,
                               ILateUpdateManager lateUpdateManager)
         {
-            Debug.Log("Constructing Observer Test");
             _updateManager = updateManager;
             _fixedUpdateManager = fixedUpdateManager;
             _lateUpdateManager = lateUpdateManager;

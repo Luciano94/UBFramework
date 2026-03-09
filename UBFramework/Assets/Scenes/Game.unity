@@ -167,6 +167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388517580753982055, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
+      propertyPath: _installerPrefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 7283242121269174287, guid: 2b473ad73515d1c4380e4243c8fa988a, type: 3}
     - target: {fileID: 7030540403894097401, guid: db9bdd6a35d32a649b6a654eef3cdd5e, type: 3}
       propertyPath: _updateObserver
       value: 

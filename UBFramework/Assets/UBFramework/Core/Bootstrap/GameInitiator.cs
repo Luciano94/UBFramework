@@ -1,6 +1,7 @@
+using UBFramework.Core.UpdateSystem;
+using UBFramework.UI.UISystem;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UBFramework.Core.UpdateSystem;
 using Zenject;
 
 
@@ -8,15 +9,6 @@ namespace UBFramework.Core.Bootstrap
 {
     public class GameInitiator : MonoInstaller<GameInitiator>
     {
-        [SerializeField] private Camera _cameraPrefab;
-        [SerializeField] private Light _lightPrefab;
-        [SerializeField] private Volume _volumePrefab;
-
-        
-        private Camera _camera;
-        private Light _light;
-        private Volume _volume;
-        
         /// <summary>
         /// This should be the only Start method in the game, and here is where all objects and systems are initialized.
         /// </summary>
@@ -38,6 +30,12 @@ namespace UBFramework.Core.Bootstrap
             Container.Bind<IUpdateManager>().To<UpdateManager>().FromNewComponentOnNewGameObject().AsSingle();
             Container.Bind<IFixedUpdateManager>().To<FixedUpdateManager>().FromNewComponentOnNewGameObject().AsSingle();
             Container.Bind<ILateUpdateManager>().To<LateUpdateManager>().FromNewComponentOnNewGameObject().AsSingle();
+            
+            Container.Bind<Camera>().To<Camera>().FromNewComponentOnNewGameObject().AsSingle();
+            Container.Bind<Light>().To<Light>().FromNewComponentOnNewGameObject().AsSingle();
+            Container.Bind<Volume>().To<Volume>().FromNewComponentOnNewGameObject().AsSingle();
+            
+            Container.Bind<IUIManager>().To<UIManager>().FromNewComponentOnNewGameObject().AsSingle();
         }
         
         /// <summary>
@@ -45,10 +43,6 @@ namespace UBFramework.Core.Bootstrap
         /// </summary>
         private void BindObjects()
         {
-            Debug.Log("BindObjects");
-            _camera = Instantiate(_cameraPrefab);
-            _light = Instantiate(_lightPrefab);
-            _volume = Instantiate(_volumePrefab);
         }
         
         /// <summary>
