@@ -6,6 +6,9 @@ namespace UBFramework.UI.UISystem
     public class UIScreen : MonoBehaviour
     {
         [Inject]
-        public IUIManager _uiManager;
+        private IUIManager _uiManager;
+        
+        [SerializeField]
+        private ScreenID _screenID;
     }
 }

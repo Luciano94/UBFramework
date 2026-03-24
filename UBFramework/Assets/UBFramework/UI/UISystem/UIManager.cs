@@ -10,6 +10,7 @@ namespace UBFramework.UI.UISystem
     // A unique ID that identifies each Screen.
     public enum ScreenID
     {
+        MainMenu,
     }
 
     public interface IUIManager
@@ -27,7 +28,7 @@ namespace UBFramework.UI.UISystem
         private IUpdateManager _updateManager;
         
         // Private fields
-        private List<UIScreen> _uiScreens;
+        private Dictionary<ScreenID, UIScreen> _uiScreens;
         
         // Public accessors
         public Camera UICamera => _uiCamera;
@@ -52,5 +53,7 @@ namespace UBFramework.UI.UISystem
         public void ObserverUpdate()
         {
         }
+        
+        
     }
 }
